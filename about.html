@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Learn about ARAWLII — Academy of Writers and World Literati, its history, vision, mission, leadership and literary journey."
+  >
+
+  <meta name="theme-color" content="#0d3328">
+
+  <title>About ARAWLII | Academy of Writers and World Literati</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --ivory: #f7f0e4;
+      --paper: #fffaf0;
+      --paper-dark: #efe3d0;
+
+      --forest: #0d3328;
+      --forest-dark: #071f19;
+
+      --maroon: #68242a;
+      --gold: #bd8b32;
+      --gold-light: #dfbd76;
+
+      --text: #251c17;
+      --muted: #6e6258;
+      --white: #ffffff;
+
+      --border: rgba(189, 139, 50, 0.35);
+      --shadow: 0 20px 55px rgba(37, 28, 23, 0.14);
+
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      background: var(--ivory);
+      font-family: "Inter", sans-serif;
+      line-height: 1.7;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.08;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .container {
+      width: min(var(--container), 92%);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-soft {
+      background: var(--paper-dark);
+    }
+
+    .section-dark {
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(189, 139, 50, 0.17),
+          transparent 35%
+        ),
+        var(--forest);
+    }
+
+    .section-dark h2,
+    .section-dark h3 {
+      color: var(--white);
+    }
+
+    .section-dark p {
+      color: #ddd2c1;
+    }
+
+    .announcement {
+      color: #f0e4cf;
+      background: var(--forest-dark);
+      font-size: 0.78rem;
+    }
+
+    .announcement .container {
+      display: flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .announcement span:last-child {
+      color: var(--gold-light);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 250, 240, 0.95);
+      backdrop-filter: blur(18px);
+    }
+
+    .navbar {
+      display: flex;
+      min-height: 86px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      min-width: 250px;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      flex-shrink: 0;
+      place-items: center;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      background: var(--forest);
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--maroon);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.14em;
+      line-height: 1;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 6px;
+      color: var(--forest);
+      font-size: 0.66rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--forest);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--maroon);
+    }
+
+    .nav-button {
+      padding: 11px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: transparent;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      margin: 5px auto;
+      background: var(--forest);
+      transition: 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .page-hero {
+      position: relative;
+      display: grid;
+      min-height: 68vh;
+      overflow: hidden;
+      align-items: center;
+      color: var(--white);
+      isolation: isolate;
+    }
+
+    .page-hero::before {
+      position: absolute;
+      z-index: -3;
+      content: "";
+      inset: 0;
+      background:
+        url("images/about-hero.jpg") center / cover no-repeat,
+        linear-gradient(135deg, #173c30, #6d4a31);
+    }
+
+    .page-hero::after {
+      position: absolute;
+      z-index: -2;
+      content: "";
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 31, 25, 0.97),
+          rgba(7, 31, 25, 0.84) 55%,
+          rgba(104, 36, 42, 0.34)
+        );
+    }
+
+    .page-hero-content {
+      max-width: 850px;
+      padding: 105px 0 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--maroon);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 34px;
+      height: 2px;
+      content: "";
+      background: var(--gold);
+    }
+
+    .page-hero .eyebrow,
+    .section-dark .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .page-hero h1 {
+      margin-bottom: 24px;
+      font-size: clamp(4rem, 8vw, 7rem);
+    }
+
+    .page-hero p {
+      max-width: 720px;
+      color: #ede3d3;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+      color: #d5c8b5;
+      font-size: 0.82rem;
+    }
+
+    .breadcrumb a {
+      color: var(--gold-light);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-heading.center .eyebrow::before {
+      display: none;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 16px;
+      color: var(--forest);
+      font-size: clamp(2.7rem, 5vw, 4.7rem);
+    }
+
+    .section-heading.center p {
+      max-width: 680px;
+      margin-inline: auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-grid h2 {
+      color: var(--forest);
+      font-size: clamp(2.8rem, 5vw, 4.7rem);
+    }
+
+    .about-content p + p {
+      margin-top: 18px;
+    }
+
+    .highlight-box {
+      margin-top: 30px;
+      padding: 28px;
+      border-left: 5px solid var(--gold);
+      background: var(--forest);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-box p {
+      color: #eee2d0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.42rem;
+      font-style: italic;
+    }
+
+    .registration-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .registration-card {
+      min-height: 180px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      background: var(--paper);
+      transition: 0.3s ease;
+    }
+
+    .registration-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .registration-card span {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .registration-card h3 {
+      color: var(--maroon);
+      font-size: 1.45rem;
+      overflow-wrap: anywhere;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .vision-card {
+      min-height: 350px;
+      padding: 38px;
+      border: 1px solid rgba(223, 189, 118, 0.25);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .vision-icon {
+      display: grid;
+      width: 62px;
+      height: 62px;
+      margin-bottom: 28px;
+      place-items: center;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      font-size: 1.7rem;
+    }
+
+    .vision-card h3 {
+      margin-bottom: 16px;
+      font-size: 2.15rem;
+    }
+
+    .vision-card ul {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .vision-card li {
+      position: relative;
+      padding-left: 20px;
+      color: #ddd2c1;
+    }
+
+    .vision-card li::before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      content: "";
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .value-card {
+      min-height: 240px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      background: var(--paper);
+      transition: 0.3s ease;
+    }
+
+    .value-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+    }
+
+    .value-number {
+      display: block;
+      margin-bottom: 34px;
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .value-card h3 {
+      margin-bottom: 12px;
+      color: var(--maroon);
+      font-size: 1.6rem;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .timeline-item {
+      padding: 24px;
+      border-top: 3px solid var(--gold);
+      background: var(--paper);
+    }
+
+    .timeline-year {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--maroon);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 10px;
+      color: var(--forest);
+      font-size: 1.55rem;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .leader-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      transition: 0.3s ease;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .leader-image {
+      display: grid;
+      min-height: 260px;
+      place-items: center;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(13, 51, 40, 0.05),
+          rgba(13, 51, 40, 0.8)
+        ),
+        var(--leader-image, linear-gradient(135deg, #bba17b, #3d2a24))
+          center / cover;
+    }
+
+    .leader-card:nth-child(1) .leader-image {
+      --leader-image: url("images/satish-verma.jpg");
+    }
+
+    .leader-card:nth-child(2) .leader-image {
+      --leader-image: url("images/anuraag-sharma.jpg");
+    }
+
+    .leader-card:nth-child(3) .leader-image {
+      --leader-image: url("images/moizur-khan.jpg");
+    }
+
+    .leader-initials {
+      display: grid;
+      width: 86px;
+      height: 86px;
+      place-items: center;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      background: rgba(7, 31, 25, 0.85);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .leader-content {
+      padding: 26px;
+    }
+
+    .leader-role {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .leader-content h3 {
+      margin-bottom: 12px;
+      color: var(--maroon);
+      font-size: 1.9rem;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .achievement-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 28px;
+      border: 1px solid rgba(223, 189, 118, 0.24);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .achievement-icon {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      color: var(--forest-dark);
+      border-radius: 50%;
+      background: var(--gold);
+      font-weight: 900;
+    }
+
+    .achievement-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.55rem;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .philosophy-content h2 {
+      margin-bottom: 20px;
+      color: var(--forest);
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+    }
+
+    .philosophy-content p + p {
+      margin-top: 18px;
+    }
+
+    .philosophy-visual {
+      position: relative;
+      min-height: 470px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(13, 51, 40, 0.08),
+          rgba(13, 51, 40, 0.76)
+        ),
+        url("images/literary-philosophy.jpg") center / cover,
+        linear-gradient(135deg, #c9b48f, #3a2b25);
+      box-shadow: var(--shadow);
+    }
+
+    .philosophy-quote {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      left: 24px;
+      padding: 24px;
+      border-left: 4px solid var(--gold);
+      background: rgba(7, 31, 25, 0.88);
+    }
+
+    .philosophy-quote p {
+      color: #eee2d0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+
+    .cta {
+      padding: 85px 0;
+      color: var(--white);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 31, 25, 0.96),
+          rgba(104, 36, 42, 0.85)
+        ),
+        url("images/cta-background.jpg") center / cover,
+        var(--forest);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+    }
+
+    .cta p {
+      max-width: 700px;
+      color: #e8ddcb;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-gold {
+      color: var(--forest-dark);
+      background: var(--gold);
+    }
+
+    .button-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.65);
+    }
+
+    .footer {
+      padding: 70px 0 25px;
+      color: #ddd1bd;
+      background: var(--forest-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 1fr;
+      gap: 50px;
+    }
+
+    .footer h3 {
+      margin-bottom: 16px;
+      color: var(--gold);
+    }
+
+    .footer-links a {
+      display: block;
+      margin: 8px 0;
+      color: #cfc3b0;
+    }
+
+    .footer p {
+      color: #bfb3a1;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 42px;
+      padding-top: 20px;
+      color: #aa9e8d;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 1050px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 124px;
+        right: -100%;
+        bottom: 0;
+        width: min(370px, 88%);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 30px;
+        border-left: 1px solid var(--border);
+        background: var(--paper);
+        transition: right 0.35s ease;
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 12px 8px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .about-grid,
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .registration-grid,
+      .values-grid,
+      .timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .announcement .container {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .announcement span:last-child {
+        display: none;
+      }
+
+      .navbar {
+        min-height: 76px;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand-mark {
+        width: 47px;
+        height: 47px;
+      }
+
+      .brand-text strong {
+        font-size: 1.28rem;
+      }
+
+      .brand-text small {
+        display: none;
+      }
+
+      .nav-links {
+        top: 114px;
+      }
+
+      .page-hero {
+        min-height: 60vh;
+      }
+
+      .page-hero-content {
+        padding: 82px 0 68px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(3.5rem, 17vw, 5rem);
+      }
+
+      .registration-grid,
+      .vision-grid,
+      .values-grid,
+      .timeline,
+      .leadership-grid,
+      .achievement-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vision-card {
+        min-height: auto;
+        padding: 28px;
+      }
+
+      .philosophy-visual {
+        min-height: 390px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    <div class="container">
+      <span>Academy of Writers and World Literati · Ajmer, India</span>
+      <span>Literature Beyond Borders</span>
+    </div>
+  </div>
+
+  <header class="header" id="top">
+    <div class="container navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">✒</span>
+
+        <span class="brand-text">
+          <strong>ARAWLII</strong>
+          <small>Academy of Writers and World Literati</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="prosopisia.html">Prosopisia</a>
+        <a href="second-genesis.html">Second Genesis</a>
+        <a href="authors.html">Authors</a>
+        <a href="archive.html">Archive</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html" class="nav-button">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content
