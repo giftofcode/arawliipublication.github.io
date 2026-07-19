@@ -1137,3 +1137,12 @@ p {
   pointer-events: auto;
   transform: translateY(0);
 }
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
