@@ -1074,3 +1074,66 @@ p {
 .footer-bottom a:hover {
   color: var(--gold-light);
 }
+/* ---------- JAVASCRIPT ANIMATIONS ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-message {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.form-message.success {
+  color: #174a39;
+  border: 1px solid rgba(23, 74, 57, 0.25);
+  background: rgba(23, 74, 57, 0.1);
+}
+
+.form-message.error {
+  color: var(--maroon);
+  border: 1px solid rgba(104, 36, 42, 0.25);
+  background: rgba(104, 36, 42, 0.1);
+}
+
+.scroll-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 900;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: var(--forest-dark);
+  border: 0;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: var(--shadow-small);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
